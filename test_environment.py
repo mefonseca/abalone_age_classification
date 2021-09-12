@@ -20,6 +20,5 @@ def main():
     else:
         print(">>> Development environment passes all tests!")
 
-
 if __name__ == '__main__':
     main()
