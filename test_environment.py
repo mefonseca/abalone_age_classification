@@ -2,6 +2,8 @@ import sys
 
 REQUIRED_PYTHON = "python3"
 
+def test_squared():
+    assert 2**2 == 4
 
 def main():
     system_major = sys.version_info.major
