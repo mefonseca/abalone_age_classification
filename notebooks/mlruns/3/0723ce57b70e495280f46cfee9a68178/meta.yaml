@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/fonse/Desktop/gitProjects/abalone_age_classification/notebooks/mlruns/3/0723ce57b70e495280f46cfee9a68178/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '3'
+lifecycle_stage: deleted
+name: ''
+run_id: 0723ce57b70e495280f46cfee9a68178
+run_uuid: 0723ce57b70e495280f46cfee9a68178
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1632603009758
+status: 1
+tags: []
+user_id: fonse
