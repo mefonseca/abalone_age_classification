@@ -1,0 +1,4 @@
+artifact_location: file:///C:/Users/fonse/Desktop/gitProjects/abalone_age_classification/notebooks/mlruns/1
+experiment_id: '1'
+lifecycle_stage: active
+name: abalone
