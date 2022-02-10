@@ -1,0 +1,53 @@
+# Package Overview
+package_name: abalone_classification_model
+
+# Data Files
+raw_data_file: abalone_data.txt
+#training_data_file: train.csv
+#test_data_file: test.csv
+
+pipeline_name: classification_model
+dataprep_pipeline_save_file: trained_dataprep_pipeline
+model_save_file: classification_model_output_v
+
+# Variables
+col_names:
+  - sex
+  - length
+  - diameter
+  - height
+  - whole_weight
+  - shucked_weight
+  - viscera_weight
+  - shell_weight
+  - rings
+
+target: age
+
+features:
+  - sex
+  - length
+  - diameter 
+  - height
+  - whole_weight
+  - shucked_weight
+  - viscera_weight
+  - shell_weight
+  
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 123
+
+categorical_vars:
+  - sex
+
+numerical_vars:
+  - length
+  - diameter
+  - height
+  - whole_weight
+  - shucked_weight
+  - viscera_weight
+  - shell_weight
