@@ -17,13 +17,10 @@ def load_data(dataset_directory: str, file_name: str, col_names: List[str]) -> p
         pd.DataFrame: Loaded DataFrame frame
     """
 
-    df_loaded_data = pd.read_csv(
-        pathlib.Path(f"{dataset_directory}/{file_name}"),
-        header=None,
-        names=col_names
-    )
+    df_loaded_data = pd.read_csv(pathlib.Path(f"{dataset_directory}/{file_name}"), header=None, names=col_names)
 
     return df_loaded_data
+
 
 def start_experiment(artifact_location: pathlib.Path, stage: str, experiment_name: str = "abalone_classification"):
     """Creates the mlflow experiment (if it doesn't already exists) and starts the experiment
@@ -42,5 +39,3 @@ def start_experiment(artifact_location: pathlib.Path, stage: str, experiment_nam
     mlflow.set_experiment(experiment_name)
     mlflow.start_run()
     mlflow.log_param("stage", stage)
-
-
