@@ -90,3 +90,4 @@ target/
 
 # mlflow Checkpoints
 /notebooks/mlruns/
+/mlruns/.trash

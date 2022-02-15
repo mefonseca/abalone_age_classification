@@ -12,7 +12,6 @@ DATASET_DIR = PACKAGE_ROOT / "data"
 DATASET_RAW_DIR = PACKAGE_ROOT / "data/raw"
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "models"
 
-
 class AppConfig(BaseModel):
     """
     Application-level config.

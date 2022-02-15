@@ -3,6 +3,7 @@ import pathlib
 from typing import List, Tuple
 import joblib
 from sklearn.pipeline import Pipeline
+import mlflow
 
 
 def load_data(dataset_directory: str, file_name: str, col_names: List[str]) -> pd.DataFrame:
@@ -24,20 +25,22 @@ def load_data(dataset_directory: str, file_name: str, col_names: List[str]) -> p
 
     return df_loaded_data
 
-def fit_pipeline_and_save(X: pd.DataFrame, pipeline: Pipeline, directory_to_save_pipeline: str, file_name: str) -> Tuple[Pipeline, pd.DataFrame]:
-    """Fit, transform and save Pipeline
+def start_experiment(artifact_location: pathlib.Path, stage: str, experiment_name: str = "abalone_classification"):
+    """Creates the mlflow experiment (if it doesn't already exists) and starts the experiment
 
     Args:
-        X (pd.DataFrame): DataFrame to fit Pipeline
-        pipeline (Pipeline): Pipeline to be fitted and saved
-        directory_to_save_pipeline (str): Directory to save Pipeline
-        file_name (str): File name to save Pipeline
-
-    Returns:
-        Tuple[Pipeline, pd.DataFrame]: Returns fitted Pipeline and transformed DataFrame
+        artifact_location (pathlib.Path): Path where experiment will be saved.
+        stage(str): Stage of the data science process. Eg.: train, test, predict
+        experiment_name (str, optional): [description]. Defaults to "abalone_classification".
     """
-    X_transformed = pipeline.fit_transform(X)
-    trained_pipeline = pipeline
-    joblib.dump(trained_pipeline, pathlib.Path(f"{directory_to_save_pipeline}/{file_name}.pkl"))
+    try:
+        mlflow.create_experiment(name=experiment_name, artifact_location=artifact_location)
+        print("Creating mlflow experiment")
+    except:
+        print("Experiment already exists")
 
-    return trained_pipeline, X_transformed
+    mlflow.set_experiment(experiment_name)
+    mlflow.start_run()
+    mlflow.log_param("stage", stage)
+
+

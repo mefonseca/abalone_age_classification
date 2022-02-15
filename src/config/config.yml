@@ -7,7 +7,7 @@ raw_data_file: abalone_data.txt
 #test_data_file: test.csv
 
 pipeline_name: classification_model
-dataprep_pipeline_save_file: trained_dataprep_pipeline
+dataprep_pipeline_save_file: dataprep_pipeline
 model_save_file: classification_model_output_v
 
 # Variables
