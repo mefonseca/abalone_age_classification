@@ -22,8 +22,8 @@ class AppConfig(BaseModel):
     package_name: str
     raw_data_file: str
     training_data_file: str
-    to_predict_data_file: str 
-    predicted_data_file: str 
+    to_predict_data_file: str
+    predicted_data_file: str
     dataprep_pipeline_save_file: str
 
 
