@@ -1,0 +1,8 @@
+artifact_path: dataprep_pipeline
+flavors:
+  sklearn:
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: '1.0'
+run_id: aa82d6193c614f1fa4066c0226c34b7f
+utc_time_created: '2022-02-22 18:55:12.440805'

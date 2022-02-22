@@ -3,12 +3,11 @@ package_name: abalone_classification_model
 
 # Data Files
 raw_data_file: abalone_data.txt
-#training_data_file: train.csv
-#test_data_file: test.csv
-
+training_data_file: train.txt
+to_predict_data_file: to_predict.txt
+predicted_data_file: predicted.txt
 pipeline_name: classification_model
 dataprep_pipeline_save_file: dataprep_pipeline
-model_save_file: classification_model_output_v
 
 # Variables
 col_names:

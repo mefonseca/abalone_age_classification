@@ -15,6 +15,14 @@ import utils
 
 
 def prepare_raw_data(df_raw_data: pd.DataFrame) -> pd.DataFrame:
+    """Prepares the original data. Creates the target variable Age, by categorizing the variable age.
+
+    Args:
+        df_raw_data (pd.DataFrame): DataFrame original com os dados
+
+    Returns:
+        pd.DataFrame: Prepared DataFrame
+    """
     df_raw_data["age"] = df_raw_data["rings"] + 1.5
     df_raw_data["age"] = pd.cut(
         df_raw_data["age"], bins=[0, 8, 14, max(df_raw_data["age"])], labels=["young", "middle age", "old"]
@@ -158,7 +166,7 @@ if __name__ == "__main__":
 
     df_raw_data = utils.load_data(
         dataset_directory=DATASET_RAW_DIR,
-        file_name=config.app_config.raw_data_file,
+        file_name=config.app_config.training_data_file,
         col_names=config.model_config.col_names,
     )
 
@@ -189,3 +197,4 @@ if __name__ == "__main__":
     evaluate_classification_and_log(model, X_train_transformed, y_train, X_test_transformed, y_test)
 
     mlflow.end_run()
+    print(X_train_transformed.describe())

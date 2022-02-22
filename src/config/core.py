@@ -10,7 +10,8 @@ PACKAGE_ROOT = Path().resolve()
 CONFIG_FILE_PATH = PACKAGE_ROOT / "src/config/config.yml"
 DATASET_DIR = PACKAGE_ROOT / "data"
 DATASET_RAW_DIR = PACKAGE_ROOT / "data/raw"
-TRAINED_MODEL_DIR = PACKAGE_ROOT / "models"
+DATASET_PREDICTED_DIR = PACKAGE_ROOT / "data/predicted"
+TRAINED_MODEL_DIR = PACKAGE_ROOT / "mlruns"
 
 
 class AppConfig(BaseModel):
@@ -20,8 +21,10 @@ class AppConfig(BaseModel):
 
     package_name: str
     raw_data_file: str
+    training_data_file: str
+    to_predict_data_file: str 
+    predicted_data_file: str 
     dataprep_pipeline_save_file: str
-    model_save_file: str
 
 
 class ModelConfig(BaseModel):
