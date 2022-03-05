@@ -1,7 +1,12 @@
 abalone_age_classification
 ==============================
 
-A short description of the project.
+The goal of this project is to predict the age of abalones from physical measurements. 
+
+The age of abalone is determined by cutting the shell through the cone, staining it, and counting the number of rings through a microscope -- a boring and time-consuming task. Other measurements, which are easier to obtain, are used to predict the age (https://archive.ics.uci.edu/ml/datasets/abalone)
+
+By classifying the age of abalones from measurements, we remove the need for the costly task of counting rings. The age in years is set as the number of rings plus 1.5. I first approached this project as a regression model, as can be found in the notebooks folder. Since the models were not performing well, I decided to attack the problem as a classification case, considering age as a category with the classes young, middle age, and old. The cuts for the age category were decided after analyzing the distribution of the original variable.
+
 
 Project Organization
 ------------
